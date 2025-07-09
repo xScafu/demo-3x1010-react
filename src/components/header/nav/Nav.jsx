@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import { pageData } from "../../../data/pageData";
 
 export default function Nav() {
+  const navigation = pageData.header.navigation;
   // Evidenzia il link della pagina corrente in entrambi i menu
   useEffect(() => {
     const allLinks = document.querySelectorAll(
@@ -13,88 +15,32 @@ export default function Nav() {
         link.classList.add("currentPage");
       }
     });
-
-    // Gestione del menu mobile
-    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
-    const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-    const mobileMenuClose = document.getElementById("mobileMenuClose");
-
-    mobileMenuToggle.addEventListener("click", () => {
-      mobileMenuOverlay.classList.add("active");
-    });
-
-    mobileMenuClose.addEventListener("click", () => {
-      mobileMenuOverlay.classList.remove("active");
-    });
-
-    // (Opzionale) Chiudi il menu cliccando fuori dal menu
-    mobileMenuOverlay.addEventListener("click", (e) => {
-      if (e.target === mobileMenuOverlay) {
-        mobileMenuOverlay.classList.remove("active");
-      }
-    });
-
-    // Previene l'apertura involontaria del menu quando si passa da visualizzazione larga a stretta
-    window.addEventListener("resize", () => {
-      if (window.innerWidth >= 768) {
-        // Chiudi il menu mobile se aperto
-        const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
-        if (mobileMenuOverlay) mobileMenuOverlay.classList.remove("active");
-        document.body.classList.remove("no-scroll");
-      }
-    });
   });
+
+  console.log(navigation);
 
   return (
     <>
       <nav>
         <figure id="logo">
-          <img src="3x1010Logo.svg" alt="" />
+          <img src={navigation.logo.src} alt={navigation.logo.alt} />
         </figure>
-        <button id="mobileMenuToggle" aria-label="Apri menu">
+        <button id="mobileMenuToggle" aria-label="Open menu">
           &#9776;
         </button>
         <menu id="mainMenu">
-          <li>
-            <a
-              href="http://localhost:5173"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Homepage
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Servizi
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="button"
-            >
-              Storia
-            </a>
-          </li>
+          {navigation.menuItems.map((item) => (
+            <li key={item.id}>
+              <a
+                href={item.href}
+                target={item.target}
+                rel={item.rel}
+                className="button"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </menu>
       </nav>
     </>
