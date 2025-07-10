@@ -147,31 +147,37 @@ export const pageData = {
       description: "I passi fondamentali del nostro percorso professionale",
       items: [
         {
-          id: "stage1",
-          textId: "stageText1",
+          className: "goal",
+          id: "1",
+          textClass: "stageText",
           year: "2011",
           text: "Fondiamo 3×1010 per fornire servizi informatici e creativi.",
         },
         {
-          id: "stage2",
-          textId: "stageText2",
+          className: "goal",
+          id: "2",
+          textClass: "stageText",
           year: "2015",
           text: "Realizziamo avanzati sistemi di gestione asset aziendali per clienti internazionali come Heineken.",
         },
         {
-          id: "stage3",
-          textId: "stageText3",
+          className: "goal",
+          id: "3",
+          textClass: "stageText",
           year: "2018",
           text: "Iniziamo la collaborazione con Compagnia dei Caraibi per progettare e sviluppare la loro intera transizione digitale.",
         },
         {
-          id: "stage4",
-          textId: "stageText4",
+          className: "goal",
+          id: "4",
+          textClass: "stageText",
           year: "2024",
           text: "Progettiamo e realizziamo diversi siti creativi per famosi brand e personaggi internazionali nei settori del lusso, della moda e della musica.",
         },
         {
-          id: "stage5",
+          className: "goal",
+          id: "5",
+          textClass: "stageText",
           innerText: "Eccoci qui. Chiamaci!",
         },
       ],
@@ -184,7 +190,8 @@ export const pageData = {
         "Per fare qualcosa insieme dobbiamo prima conoscerci un po’.",
       form: [
         {
-          id: "nameInput",
+          key: "name",
+          className: "nameInput",
           label: { htmlFor: "name", text: "Nome" },
           input: {
             type: "text",
@@ -194,7 +201,8 @@ export const pageData = {
           },
         },
         {
-          id: "emailInput",
+          key: "email",
+          className: "emailInput",
           label: { htmlFor: "email", text: "Email" },
           input: {
             type: "text",
@@ -204,7 +212,8 @@ export const pageData = {
           },
         },
         {
-          id: "telephoneInput",
+          key: "telephone",
+          className: "telephoneInput",
           label: { htmlFor: "telephone", text: "Telefono" },
           input: {
             type: "text",
@@ -214,7 +223,8 @@ export const pageData = {
           },
         },
         {
-          id: "textarea",
+          key: "textarea",
+          className: "textareaInput",
           label: { htmlFor: "message", text: "Messaggio" },
           textarea: {
             id: "message",

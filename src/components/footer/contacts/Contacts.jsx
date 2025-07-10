@@ -49,13 +49,12 @@ export default function Contacts() {
     <>
       {/* <!-- Contacts section --> */}
       <section>
-        <div class="contacts">
+        <div className="contacts">
           <h2>{contacts.title}</h2>
           <p>{contacts.description}</p>
           <form action="" method="">
             {contacts.form.map((form) => (
-              <div id={form.id} className="form-group">
-                {console.log(form)}
+              <div key={form.key} className={`${form.className} form-group`}>
                 <label htmlFor={form.label.htmlFor}>{form.label.text}</label>
                 {form.input ? (
                   <input

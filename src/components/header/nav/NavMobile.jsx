@@ -39,7 +39,7 @@ export default function NavMobile() {
   return (
     <>
       {/* // Mobile menu overlay */}
-      <div id="mobileMenuOverlay" class="mobile-menu-overlay">
+      <div id="mobileMenuOverlay" className="mobile-menu-overlay">
         <button id="mobileMenuClose" aria-label="Close menu">
           &times;
         </button>

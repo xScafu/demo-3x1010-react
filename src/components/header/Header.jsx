@@ -1,4 +1,4 @@
-import HeroSection from "./nav/HeroSection";
+import HeroSection from "./hero/HeroSection";
 import Nav from "./nav/Nav";
 import NavMobile from "./nav/NavMobile";
 

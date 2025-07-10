@@ -3,8 +3,6 @@ import { pageData } from "../../../data/pageData";
 export default function HeroSection() {
   const hero = pageData.header.hero;
 
-  console.log(hero);
-
   return (
     <>
       {/* // Hero Section */}
